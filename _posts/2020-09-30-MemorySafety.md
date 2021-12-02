@@ -22,7 +22,7 @@ print("We're number \(one)!")
 当你的代码中不同的部分试图同时访问内存中同一块区域时，对内存的存取就会产生冲突。同时对内存中的同一个区域进行多次访问会造成不可预期或者不一致的行为。在 Swift 中，有多种方法可以在修改跨越几行代码中的值，使得可以在修改过程中访问一些中间值。
 通过下面这个如何更新纸条上的预算的例子，你可以看到类似的问题。更新预算分为两个步骤：首先，你需要添加项目的名字和价格，然后你需要根据当前纸条上的预算来更新总金额。在更新前和更新后，你都可以从预算中读取任何信息和获取正确的答案，如下图所示：
 
-![memory_shopping_2x](/media/memory_shopping_2x.png)
+![memory_shopping_2x](../media/memory_shopping_2x.png)
 
 当你向预算中添加项目时，它处于一个临时的，无效的状态中，因为总金额尚未根据你添加的项目进行更新。在添加项目的过程中读取总金额会得到错误的信息。
 这个例子还说明了在解决内存冲突时可能会遇到的挑战：有时有几种方法来解决冲突，但是会导致不同的答案，且哪个答案是正确的有时是件不明显的事情。在这个示例中，根据你要需要的是原始的金额还是更新后的金额， $5 和 $320 都可以是正确答案。在你解决冲突前，必须要清楚需要获取的金额是哪个。
@@ -72,7 +72,7 @@ increment(&stepSize)
 
 在上述代码中， `stepSize` 是一个全局变量，所以在 `increment(_:)` 方法中可以直接访问它。然而， `stepSize` 的读访问和 `number` 的写访问重叠了。如下面配图所示， `number` 和 `stepSize` 都指向内存中同一个位置。读访问和写访问都指向相同的内存，且它们重叠了，因此产生了冲突。
 
-![memory_increment_2x](/media/memory_increment_2x.png)
+![memory_increment_2x](../media/memory_increment_2x.png)
 
 
 一个解决的办法是拷贝 `stepSize` ：
@@ -139,7 +139,7 @@ oscar.shareHealth(with: &maria)  // OK
 
 在上面的例子中，调用 `shareHealth(with:)` 方法来共享 Oscar 玩家和 Maria 玩家之间的生命值不会产生冲突。在执行方法期间会存在一个对 `oscar` 的写访问，因为这是一个 `mutating` 的方法。然后还有对 `maria` 的写访问，因为 `maria` 是作为一个 `in-out` 参数传递进来的。如下图所示，它们指向的是内存中不同的位置，所以即使两个写访问在时间上重叠了，它们也不会产生冲突。
 
-![memory_share_health_maria_2x](/media/memory_share_health_maria_2x.png)
+![memory_share_health_maria_2x](../media/memory_share_health_maria_2x.png)
 
 然而，如果你将 `oscar` 作为 `shareHealth(with:)` 的参数进行传递，就会产生冲突：
 
@@ -150,7 +150,7 @@ oscar.shareHealth(with: &oscar)
 
 `mutating` 方法在执行期间对 `self` 有写访问， `in-out` 参数同时对 `teammate` 有写访问。所以 `self` 和 `teammate` 同时指向内存中相同的位置，如下所示，它们指向相同的内存，且重叠，所以会产生冲突。
 
-![memory_share_health_oscar_2x](/media/memory_share_health_oscar_2x.png)
+![memory_share_health_oscar_2x](../media/memory_share_health_oscar_2x.png)
 
 ## 访问属性时冲突
 `stuct` ， `tuple` 和 `enum` 这些类型由不同的独立的值组成，比如说 `struct` 的 `property` 和 `tuple` 的 `element` 。因为它们是值类型，所以修改任何一部分都会修改整个值，这意味着对于属性的读或者写访问会持有对整个值的读或者写访问。举个例子，对  `tuple` 的不同 `element` 写访问重叠时就会产生冲突：

@@ -351,7 +351,7 @@ NSDictionary <NSString *, NSNumber *> *dictionary;
 
 ## WorkingRange
 
-![workingrange](/media/workingrange.png)
+![workingrange](../media/workingrange.png)
 
 `Working range` 表示还没出现在屏幕上，但是已经在附近的 `IGListSectionController` ， `IGListSectionController` 可以在进入或者退出 `Working range` 时获取对应的通知，借此可以进行一些准备工作，比如说预先下载图片。 `IGListAdapter` 可以在初始化时指定 `Working range` 的大小：
 
@@ -533,7 +533,7 @@ let adapter = ListAdapter(updater: ListAdapterUpdater(),
 ```
 
 可以看到在 `didEndDisplaying` 时， `visibleSections` 每次 `removeObject:sectionController` 都会使得 `sectionController` 的计数减一，只有当计数为 0 时才调用 `sectionController` 和 `listAdapter.delegate` 对应的方法。
- 
+
 `IGListDisplayHandler` 的内部实现为 `willDisplay/didEndDisplaying` 提供了两个层级的入口：
 1. `IGListAdapter` 级别，通过设置 `adapter` 的 `id <IGListAdapterDelegate> delegate` ，可以获取整个 `UICollectionView` 的回调；
 2. `IGListSectionController` ，通过设置 `id <IGListDisplayDelegate> displayDelegate` ，可以获取具体到某个 `sectionController` 的回调。也支持设置 `displayDelegate` 为 `IGListSectionController` 它自己，由于 `IGListSectionController` 跟 `Object` 是绑定的，所以在处理不同的 `ViewController` 中相同的 `Object` 时，我们不仅可以复用 `IGListSectionController` ，也可以复用 `displayDelegate` 的配置，进行一些曝光时长的统一配置。

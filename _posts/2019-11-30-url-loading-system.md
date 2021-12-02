@@ -15,7 +15,7 @@ URL Loading System 可以获取通过 URL 来辨别的资源，使用如 https �
 
 你可以使用一个会话来重复创建任务（tasks）。举个例子，一个浏览器可以有不同的会话提供给标准模式和隐私模式使用，隐私模式的会话不缓存数据。下图表示了两个会话如何通过 configuration 来创建多个任务。
 
-![6789dd96-afdc-4c18-b8eb-01f9012dc04d](/media/6789dd96-afdc-4c18-b8eb-01f9012dc04d.png)
+![6789dd96-afdc-4c18-b8eb-01f9012dc04d](../media/6789dd96-afdc-4c18-b8eb-01f9012dc04d.png)
 
 每个会话都与一个 delegate 相关联，通过 delegate 来接收时而出现的更新（或者错误）。默认的 delegate 会调用你提供的 completion handler block，如果你选择提供自定义的 delegate，那么 block 就不会执行。
 
@@ -37,7 +37,7 @@ URL session 通过创建一个数据任务来获取数据到内存中。
 ### 通过 Completion Handler 来接收结果
 获取数据最简单的方法是创建一个使用 completion handler 的数据任务。通过这种安排，任务将服务器的响应，数据以及可能的错误传递到你提供的 completion handler。下图显示了会话和任务之间的关系，以及如何将结果传递到 completion handler。
 
-![bf4501ff-82b2-4dd4-9ec3-243ef0e70d21](/media/bf4501ff-82b2-4dd4-9ec3-243ef0e70d21.png)
+![bf4501ff-82b2-4dd4-9ec3-243ef0e70d21](../media/bf4501ff-82b2-4dd4-9ec3-243ef0e70d21.png)
 
 
 通过调用 `URLSession` 的 [dataTask(with:)](https://developer.apple.com/documentation/foundation/urlsession/1411554-datatask) 方法可以创建一个使用 completion handler 的数据任务。你的 completion handler 需要处理以下3件事：
@@ -78,7 +78,7 @@ func startLoad() {
 ### 通过 delegate 来接收详细信息和结果
 为了在执行任务活动时获得更高级别的访问权限，在创建数据任务时，您可以在会话上设置 delegate ，而不是提供 completion handler 。下图展示了这种做法。
 
-![730c8e1b-654f-4eb9-9c63-d439a69ac5d2](/media/730c8e1b-654f-4eb9-9c63-d439a69ac5d2.png)
+![730c8e1b-654f-4eb9-9c63-d439a69ac5d2](../media/730c8e1b-654f-4eb9-9c63-d439a69ac5d2.png)
 
 
 通过这种方法，部分数据在到达时会调用 [URLSessionDataDelegate](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate) 的[urlSession(_:dataTask:didReceive:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1411528-urlsession) 方法，直到传输完成或出现错误。随着任务的进行，delegate 还接收其他类型的事件。
@@ -313,7 +313,7 @@ uploadTask.resume()
 
 一个提供数据给输入流的方式是使用流的绑定对。绑定对包含了  [NSOutputStream](https://developer.apple.com/documentation/foundation/nsoutputstream?language=objc) ，你可以输入数据到 `NSOutputStream` 中。由于绑定对的关系，你输入到 `NSOutputStream` 的数据可以在 `NSInputStream` 中获取。
 
-![a29fb2be-5f7f-4c56-9ef6-4090ecfbae82](/media/a29fb2be-5f7f-4c56-9ef6-4090ecfbae82.png)
+![a29fb2be-5f7f-4c56-9ef6-4090ecfbae82](../media/a29fb2be-5f7f-4c56-9ef6-4090ecfbae82.png)
 
 
 下面代码展示了一个持有 `NSIntputStream` 和 `NSOutputStream` 的结构体 `Streams` ，使用  [getBoundStreamsWithBufferSize:inputStream:outputStream:](https://developer.apple.com/documentation/foundation/nsstream/1412683-getboundstreamswithbuffersize?language=objc) 方法来配置 `NSInputStream` 和 `NSOutputStream` 。
@@ -396,7 +396,7 @@ timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
     }
 }
 ```
- 
+
 > 提示
 > 如果你的数据来自于一个异步处理的流程，例如一个媒体设备的回调，你还是需要等待输出流准备才可以进行写入。在这种情况下，你可以使用一个缓存区来存取你的数据。
 
@@ -434,7 +434,7 @@ let downloadTask = URLSession.shared.downloadTask(with: url) {
     }
 }
 downloadTask.resume()
-``` 
+```
 
 ### 使用 delegate 来接收进度更新
 使用 delegate 可以接收下载进度更新，你可以接入  [NSURLSessionTaskDelegate](https://developer.apple.com/documentation/foundation/nsurlsessiontaskdelegate?language=objc) 和  [NSURLSessionDownloadDelegate](https://developer.apple.com/documentation/foundation/nsurlsessiondownloaddelegate?language=objc) 协议的方法。
@@ -701,7 +701,7 @@ func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,
 
 > 如果你使用 HTTPS 进行连接，你还会接受到服务器信任的挑战。 [Performing Manual Server Trust Authentication](https://developer.apple.com/documentation/foundation/url_loading_system/handling_an_authentication_challenge/performing_manual_server_trust_authentication?language=objc) 有提供更多信息来处理这种会话层级的挑战
 
-![df4288af-90f3-4504-b657-a5ae9b3e994b](/media/df4288af-90f3-4504-b657-a5ae9b3e994b.png)
+![df4288af-90f3-4504-b657-a5ae9b3e994b](../media/df4288af-90f3-4504-b657-a5ae9b3e994b.png)
 
 
 ### 判断认证挑战的类型

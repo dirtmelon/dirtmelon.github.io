@@ -26,7 +26,7 @@ PHAssetCollection.fetchAssetCollections(with: .smartAlbum,
 ## 相册的标题
 如果没有在 项目的 Info -> Localizations 中添加 Chinese 选项，则获取到的相册标题还是英文的。
 
-![0784F52B-1A3C-4C15-AD50-984221746BF](/media/0784F52B-1A3C-4C15-AD50-984221746BFC.png)
+![0784F52B-1A3C-4C15-AD50-984221746BF](../media/0784F52B-1A3C-4C15-AD50-984221746BFC.png)
 
 
 ## 在  UICollectionView 中显示缩略图
@@ -111,5 +111,4 @@ PHImageManager.default().requestImageData(for: asset,
 
 GIF 跟普通的照片不同，我们需要获取的是 GIF 的原始 `data` ，再由原始 `data` 生成 `UIImage` 。
 在获取 `data` 时需要注意 GIF 有可能编辑过，如果有编辑过，则需要指定 `PHImageRequestOptions` 的 `version` 为 `.original` ，否则获取到有可能不是 GIF 的 `data` ，而是普通照片的 `data` 。
-
 
