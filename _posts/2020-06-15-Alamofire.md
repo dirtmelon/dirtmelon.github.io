@@ -37,7 +37,7 @@ AF.request(“https://www.github.com”)
 ## 整体架构
 Alamofire 基本的整体架构如下图所示：
 
-![Alamofire](../media/Alamofire.png)
+![Alamofire](/media/Alamofire.png)
 
 
 `Alamofire` 项目结构非常简单清晰，`Alamofire.swift` 只提供一个 `AF` 单例：
@@ -594,7 +594,7 @@ public enum State {
 
 状态机转换图如下：
 
-![Request State Machine](../media/Request%20State%20Machine.png)
+![Request State Machine](/media/Request%20State%20Machine.png)
 
 `Request` 定义了一个 `MutableState` ，用于将可变属性和不可变属性区分开，所有可变属性到放到 `MutableState` 中，且使用 `@Protected` 声明，保证线程安全。
 
@@ -1375,7 +1375,7 @@ func updateStatesForTask(_ task: URLSessionTask, request: Request) {
 
 至此已经走完了一个 `Request` 的创建流程，流程如下图所示：
 
-![Generate Request](../media/Generate%20Request.png)
+![Generate Request](/media/Generate%20Request.png)
 
 ### 响应处理
 
@@ -1542,7 +1542,7 @@ open func urlSession(_ session: URLSession,
 
 `Request` 处理请求结果的流程：
 
-![响应处理](../media/%E5%93%8D%E5%BA%94%E5%A4%84%E7%90%86.png)
+![响应处理](/media/%E5%93%8D%E5%BA%94%E5%A4%84%E7%90%86.png)
 
 每个 `ResponseSerializer` 完成处理后都会调用 `responseSerializerDidComplete(completion: @escaping () -> Void)` ，获取下一个 
 `nextResponseSerializer()` 。

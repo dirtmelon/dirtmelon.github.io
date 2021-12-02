@@ -9,7 +9,7 @@ tags: [iOS, RxSwift, MVVM]
 目前项目采用的是 `MVC` 结构，`UIViewController` 包含大量代码，包括网络请求，数据处理，布局代码等，难于测试（虽然也不写测试）。随着项目发展，这部分内容会越来越多，越来越复杂，导致 `UIViewController` 中的代码越来越难维护。为了项目的可持续发展，决定开始开始使用  `RxSwift` 和 `MVVM` 。
 
 ## ViewModel 
-![MVVMPattern](../media/MVVMPattern.png)
+![MVVMPattern](/media/MVVMPattern.png)
 
 `ViewModel` 扮演的是处理业务逻辑的角色，负责处理数据和为 `ViewController` 提供数据源。一般来说有几下几点要求：
 - 可测试的，这样可以直接为 `ViewModel` 编写单元测试。

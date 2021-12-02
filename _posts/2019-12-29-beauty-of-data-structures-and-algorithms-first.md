@@ -7,12 +7,12 @@ tags: [阅读笔记, Algorithm]
 ## 链表与 LRU 缓存淘汰算法
 数组与链表在内存分布上的不同之处，数组需要连续的内存空间，链表则不需要。
 
-![d5d5bee4be28326ba3c28373808a62cd](../media/d5d5bee4be28326ba3c28373808a62cd.jpg)
+![d5d5bee4be28326ba3c28373808a62cd](/media/d5d5bee4be28326ba3c28373808a62cd.jpg)
 
 
 数组与链表的性能比较：
 
-![4f63e92598ec2551069a0eef69db7168](../media/4f63e92598ec2551069a0eef69db7168.jpg)
+![4f63e92598ec2551069a0eef69db7168](/media/4f63e92598ec2551069a0eef69db7168.jpg)
 
 
 LeetCode 上也有对应的题目，[146. LRU Cache](https://leetcode.com/problems/lru-cache/) 。
@@ -49,7 +49,7 @@ int add(int x, int y) {
 }
 ```
 
-![17b6c6711e8d60b61d65fb0df5559a1](../media/17b6c6711e8d60b61d65fb0df5559a1c.jpg)
+![17b6c6711e8d60b61d65fb0df5559a1](/media/17b6c6711e8d60b61d65fb0df5559a1c.jpg)
 
 
 还有表达式求值，括号匹配，浏览器的前进后退等。
@@ -98,7 +98,7 @@ public class CircularQueue {
 
 阻塞队列其实就是在队列基础上增加了阻塞操作。简单来说，就是在队列为空的时候，从队头取数据会被阻塞。因为此时还没有数据可取，直到队列中有了数据才能返回；如果队列已经满了，那么插入数据的操作就会被阻塞，直到队列中有空闲位置后再插入数据，然后再返回。
 
-![5ef3326181907dea0964f612890185eb](../media/5ef3326181907dea0964f612890185eb.jpg)
+![5ef3326181907dea0964f612890185eb](/media/5ef3326181907dea0964f612890185eb.jpg)
 
 
 对于大部分资源有限的场景，当没有空闲资源时，基本上都可以通过“队列”这种数据结构来实现请求排队。

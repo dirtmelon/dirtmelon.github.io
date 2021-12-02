@@ -11,7 +11,7 @@ iOS  8 开始提供，分为 Photos 和 Photos UI 两部分。
 - 添加，删除和修改资源或相册
 - 编辑照片或者视频的内容或者元数据
 
-![511_introducing_the_photos_frameworks-007](../media/511_introducing_the_photos_frameworks-007.png)
+![511_introducing_the_photos_frameworks-007](/media/511_introducing_the_photos_frameworks-007.png)
 
 ## PhotoKit 对象模型
 `PHObject` ，PhotoKit 中的基类，`PHAsset` ，`PHAssetCollection` ，`PHCollectionList` 和  `PHObjectPlaceholder` 都继承于它，只包含 `localIdentifier` 这个属性，用于判断是否相等和进行 hash 。
@@ -24,7 +24,7 @@ iOS  8 开始提供，分为 Photos 和 Photos UI 两部分。
 
 `PHCollectionList` ，`PHCollection` 的集合，例如照片库中的时刻列表，年份列表或者用户创建的相册。
 
-![511_introducing_the_photos_frameworks-021](../media/511_introducing_the_photos_frameworks-021.png)
+![511_introducing_the_photos_frameworks-021](/media/511_introducing_the_photos_frameworks-021.png)
 
 
 ## 获取资源
@@ -128,7 +128,7 @@ Live Photo 是一张图片，会捕获拍照前后的声音和动作。就像 `U
 ## 滑动性能
 当在 Collection View 上展示照片时，可以使用 `PHImageCachingManager` 来预先加载一些图像和将一些图像从缓存中移除。
 
-![511_introducing_the_photos_frameworks-094](../media/511_introducing_the_photos_frameworks-094.png)
+![511_introducing_the_photos_frameworks-094](/media/511_introducing_the_photos_frameworks-094.png)
 
 
 滚动式预先加载有可能显示的 `PHAssets` ：

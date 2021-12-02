@@ -26,7 +26,7 @@ PHAssetCollection.fetchAssetCollections(with: .smartAlbum,
 ## 相册的标题
 如果没有在 项目的 Info -> Localizations 中添加 Chinese 选项，则获取到的相册标题还是英文的。
 
-![0784F52B-1A3C-4C15-AD50-984221746BF](../media/0784F52B-1A3C-4C15-AD50-984221746BFC.png)
+![0784F52B-1A3C-4C15-AD50-984221746BF](/media/0784F52B-1A3C-4C15-AD50-984221746BFC.png)
 
 
 ## 在  UICollectionView 中显示缩略图
