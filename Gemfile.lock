@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/dirtmelon/jekyll-theme-chirpy.git
+  revision: 9fdf66b4b170bba6a79a4e223721fb0d7b3fe2ab
+  specs:
+    jekyll-theme-chirpy (4.3.4)
+      jekyll (~> 4.1)
+      jekyll-archives (~> 2.2)
+      jekyll-paginate (~> 1.1)
+      jekyll-redirect-from (~> 0.16)
+      jekyll-seo-tag (~> 2.7)
+      jekyll-sitemap (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,13 +64,6 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-theme-chirpy (4.3.4)
-      jekyll (~> 4.1)
-      jekyll-archives (~> 2.2)
-      jekyll-paginate (~> 1.1)
-      jekyll-redirect-from (~> 0.16)
-      jekyll-seo-tag (~> 2.7)
-      jekyll-sitemap (~> 1.4)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.3.1)
@@ -110,7 +115,7 @@ PLATFORMS
 DEPENDENCIES
   html-proofer (~> 3.18)
   jekyll-compose
-  jekyll-theme-chirpy (~> 4.3, >= 4.3.3)
+  jekyll-theme-chirpy!
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
