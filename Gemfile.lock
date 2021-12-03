@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dirtmelon/jekyll-theme-chirpy.git
-  revision: 9e9b6e415e405a2da4f5b9ab86e006e112a9d943
+  revision: 808c006b1eadd140bf6bb0f0e45d69f3d6bcb1eb
   specs:
     jekyll-theme-chirpy (4.3.4)
       jekyll (~> 4.1)
