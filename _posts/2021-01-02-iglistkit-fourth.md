@@ -701,7 +701,7 @@ if (oldCount == 0) {
 
 ```objc
 unordered_map<id<NSObject>, IGListEntry, IGListHashID, IGListEqualID> table;
-``` 
+```
 
 5.遍历 `newArray` 的数据，获取对应的 `entry` ， `entry` 的 `oldIndexes` 插入 `NSNotFound` ，且设置到 `newResultsArray` 中：
 
@@ -794,7 +794,8 @@ NSInteger runningOffset = 0;
 
 9.计算删除的数据：
 
-```for (NSInteger i = 0; i < oldCount; i++) {
+```objective-c
+for (NSInteger i = 0; i < oldCount; i++) {
     deleteOffsets[i] = runningOffset;
     const IGListRecord record = oldResultsArray[i];
     // 如果 `record.index` 为 `NSNotFound` ，则表示其没有在 `newArray` 中出现，已被删除
@@ -865,4 +866,5 @@ if (returnIndexPaths) {
 ```
 
 从上面的计算可以看出需要 5 次 `for` 循环进行遍历，也就是时间复杂度为 `O(5n)` ，在 `n` 足够大的情况下可以忽略，时间复杂度可视作 `O(n)` 。
+
 这篇文章有使用两个数组作为例子进行说明 `IGListDiff` 是如何进行计算的： [IGListKit diff 实现简析](https://xiangwangfeng.com/2017/03/16/IGListKit-diff-%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%9E%90/) 。
