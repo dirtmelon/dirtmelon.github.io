@@ -235,7 +235,7 @@ static NSArray *objectsWithDuplicateIdentifiersRemoved(NSArray<id<IGListDiffable
     [self _updateBackgroundViewShouldHide:![self _itemCountIsZero]];
     _isInObjectUpdateTransaction = NO;
 }
-``` 
+```
 
 至此，使用 `IGListKit` 的初始化流程已完成。
 
@@ -637,4 +637,4 @@ typedef NS_ENUM(NSInteger, IGListAdapterUpdateType) {
 
 `IGListAdapter` 作为 `IGListKit` 的适配器，对外提供相关的刷新接口和一些通用方法，对内负责管理 `IGListSectionController` 和 `UICollectionView` ，调用 `dataSource` 和 `delegate` 。
 
-![IGListAdapter](/media/IGListAdapter.png)
+![IGListAdapter](https://raw.githubusercontent.com/dirtmelon/blog-images/main/IGListAdapter.png)

@@ -9,7 +9,7 @@ tags: [阅读笔记, Network]
 ### 无线网络的性能基础
 所有无线技术都有自身的约束和局限。然而，无论使用哪种无线技术，所有通信方法都有一个最大的信道容量，这个容量是由相同的底层原理决定的。
 香农公式：
-![1872190F-4B8E-4CAE-AC4E-50EF1BF13AD5](/media/1872190F-4B8E-4CAE-AC4E-50EF1BF13AD5.png)
+![1872190F-4B8E-4CAE-AC4E-50EF1BF13AD5](https://raw.githubusercontent.com/dirtmelon/blog-images/main/1872190F-4B8E-4CAE-AC4E-50EF1BF13AD5.png)
 
 - C 是信道容量，单位是 bit/s ；
 - BW 是可用带宽，单位是 Hz ；
@@ -39,7 +39,7 @@ Wi-Fi 工作于免许可的ISM频段，任何人在任何地方都可以轻易�
 
 ### 从以太网到无线局域网
 802.11 无线标准主要是作为既有以太网标准（ 802.3 ）的扩展来设计的。事实上，以太网通常被称作局域网（ LAN ）标准，而802.11 标准族则相应地被称作无线局域网（ WLAN，Wireless LAN ）标准。
-![5FA13F96-FF78-4D39-A229-0ED1BEDEE](/media/5FA13F96-FF78-4D39-A229-0ED1BEDEEC86.png)
+![5FA13F96-FF78-4D39-A229-0ED1BEDEE](https://raw.githubusercontent.com/dirtmelon/blog-images/main/5FA13F96-FF78-4D39-A229-0ED1BEDEEC86.png)
 
 802.3 （以太网）和 802.11 (Wi-Fi) 的数据和物理层。
 
@@ -48,7 +48,7 @@ Wi-Fi 采用了冲突避免机制 （CSMA/CA ， Collision Avoidance ）机制�
 ### Wi-Fi 性能与测量
 Wi-Fi 标准没有规定任何中央调度机制，因而对任何客户端的吞吐量和延迟都不提供保证。
 新的 WMM (Wi-Fi Multimedia ， Wi-Fi 多媒体）扩展支持在无线电接口中对需要的低延迟应用（语音，视频等）启用基本的 QoS (Quality of Service ，服务质量)，但是能识别的路由器和客户端都比较少，而且会和附近的 Wi-Fi 网络争用共享的无线资源，这是无法避免的。 Wi-Fi 网络之所以无处不在，主要原因就是它部署简单，而正因为部署简单，才会带来当前的性能问题。事实上，在城市繁华地段或者写字楼中，数十个 Wi-Fi 网络重叠的现象并不罕见：
-![6A30C39D-0D7C-42F3-9E68-D7987B3E2499](/media/6A30C39D-0D7C-42F3-9E68-D7987B3E2499.png)
+![6A30C39D-0D7C-42F3-9E68-D7987B3E2499](https://raw.githubusercontent.com/dirtmelon/blog-images/main/6A30C39D-0D7C-42F3-9E68-D7987B3E2499.png)
 
 2.4 GHz 和 5 GHz 的 Wi-Fi 重叠。
 1. 多个 Wi-Fi 路由器共享带宽导致性能问题；
@@ -76,7 +76,7 @@ Wi-Fi 性能的重要因素：
 每一代无线技术都以其峰值频谱效率（ bps/Hz ）为标志，为了让用户更直观地理解，这个效率会转换成数据传输速率，比如 4G 网络的传输速率以 Gbit/s 来衡量。
 无论什么标准，每种网络真实的性能都会因提供商以及他们对网络的配置、每个小区内活跃用户的数量、特定位置的无线环境、使用的设备，以及影响无线性能的其他因素而异。
 
-![382C4B1C-9958-418F-BCB5-ECCF6915B28A](/media/382C4B1C-9958-418F-BCB5-ECCF6915B28A.png)
+![382C4B1C-9958-418F-BCB5-ECCF6915B28A](https://raw.githubusercontent.com/dirtmelon/blog-images/main/382C4B1C-9958-418F-BCB5-ECCF6915B28A.png)
 
 ### 最早提供数据服务的 2G
 1991年，芬兰基于新兴的 GSM （ Global System for Mobile communications ，全球移动通信系统）标准建设了第一个2G网络，最早在无线电网络中引入了数字信令。
@@ -121,7 +121,7 @@ LTE （ Long Term Evolution ）标准：
 ## 无线电资源控制器 （ RRC ）
 3G和4G网络都有一个独特的装置，这个装置在有线网甚至Wi-Fi中都是不存在的。这个装置就是无线电资源控制器（RRC，Radio ResourceController ）。RRC负责调度协调移动设备与无线电基站之间所有的通信连接。 RRC 直接影响延迟、吞吐量和设备电池的使用时间。
 
-![11E2E46B-AE45-47EF-8B50-398E2873F7E7](/media/11E2E46B-AE45-47EF-8B50-398E2873F7E7.png)
+![11E2E46B-AE45-47EF-8B50-398E2873F7E7](https://raw.githubusercontent.com/dirtmelon/blog-images/main/11E2E46B-AE45-47EF-8B50-398E2873F7E7.png)
 
 ## 移动网络的优化建议
 ### 节约用电
@@ -145,11 +145,11 @@ LTE （ Long Term Evolution ）标准：
 在移动网络中，一个 HTTP 请求很可能会导致一连串长达几百甚至上几千毫秒的网络延迟。这一方面是因为有往返延迟，另一方面也不能忘记 DNS  、 TCP 、 TLS 及控制面的延迟。
 一个 HTTP 请求的构成：
 
-![DF4C61BD-6532-4A22-89A2-206FA99F1BFE](/media/DF4C61BD-6532-4A22-89A2-206FA99F1BFE.png)
+![DF4C61BD-6532-4A22-89A2-206FA99F1BFE](https://raw.githubusercontent.com/dirtmelon/blog-images/main/DF4C61BD-6532-4A22-89A2-206FA99F1BFE.png)
 
 一个 HTTP 请求的延迟：
 
-![4F7BD0AA-84FA-4D6F-8316-28B49B47C01A](/media/4F7BD0AA-84FA-4D6F-8316-28B49B47C01A.png)
+![4F7BD0AA-84FA-4D6F-8316-28B49B47C01A](https://raw.githubusercontent.com/dirtmelon/blog-images/main/4F7BD0AA-84FA-4D6F-8316-28B49B47C01A.png)
 
 解耦用户交互与网络通信：
 设计得好的应用，即便底层连接慢或者请求时间长，通过在UI中提供即时反馈也能让人觉得速度快。不要把用户交互与网络通信联系得太过紧密。为给用户最佳体验，应用必须在几百毫秒内响应输入。

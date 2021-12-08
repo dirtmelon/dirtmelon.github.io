@@ -24,7 +24,7 @@ Texture 提供了丰富的 Node 子类 ，用于取代 UIKit 组建。
 - ASButtonNode -> UIButton
 - ASMapNode -> MKMapView
 
-![node-hierarchy](/media/node-hierarchy.png)
+![node-hierarchy](https://raw.githubusercontent.com/dirtmelon/blog-images/main/node-hierarchy.png)
 
 ### Node Containers
 推荐使用 Node Container 来包含 Nodes，Texture 提供以下 Node Containers：
@@ -79,7 +79,7 @@ Node 对于它们当前的界面状态都有标志来说明。
 ### Interface State Ranges
 
 
-![intelligent-preloading-ranges-with-names](/media/intelligent-preloading-ranges-with-names.png)
+![intelligent-preloading-ranges-with-names](https://raw.githubusercontent.com/dirtmelon/blog-images/main/intelligent-preloading-ranges-with-names.png)
 
 当 scrollView 滚动时，scrollView 中的 node 就会更新至对应状态
 - Preload: 距离屏幕较远，准备所需要的数据
@@ -95,7 +95,7 @@ typedef struct {
 } ASRangeTuningParameters;
 ```
 
-![intelligent-preloading-ranges-screenfuls](/media/intelligent-preloading-ranges-screenfuls.png)
+![intelligent-preloading-ranges-screenfuls](https://raw.githubusercontent.com/dirtmelon/blog-images/main/intelligent-preloading-ranges-screenfuls.png)
 
 ASRangeTuningParameters 定义了各个区域大小，一般来说即将进入的区域比离开的区域要大一些
 

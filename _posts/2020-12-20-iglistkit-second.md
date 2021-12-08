@@ -351,7 +351,7 @@ NSDictionary <NSString *, NSNumber *> *dictionary;
 
 ## WorkingRange
 
-![workingrange](/media/workingrange.png)
+![workingrange](https://raw.githubusercontent.com/dirtmelon/blog-images/main/workingrange.png)
 
 `Working range` 表示还没出现在屏幕上，但是已经在附近的 `IGListSectionController` ， `IGListSectionController` 可以在进入或者退出 `Working range` 时获取对应的通知，借此可以进行一些准备工作，比如说预先下载图片。 `IGListAdapter` 可以在初始化时指定 `Working range` 的大小：
 

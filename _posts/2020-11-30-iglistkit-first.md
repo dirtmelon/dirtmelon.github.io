@@ -28,7 +28,7 @@ tags: [源码解析]
 
 `IGListKit` 的数据处理流程如下：
 
-![1kER0gFAQIVjfYIX2ByJP8Q](/media/1kER0gFAQIVjfYIX2ByJP8Q.png)
+![1kER0gFAQIVjfYIX2ByJP8Q](https://raw.githubusercontent.com/dirtmelon/blog-images/main/1kER0gFAQIVjfYIX2ByJP8Q.png)
 
 数据经由 `Adapter` 进行处理后转给对应的 `SectionController` ，而 `SectionController` 则会根据不同的数据类型来返回不同的 `Cell` 。整个过程中， `UIViewController` 只和 `Adapter` 和 `Updater` 进行交互，并根据不同的数据类型返回不同的 `SectionController` 。而对于 `Cell` 的处理则完全交给 `SectionController` 来进行，这一步的好处是使得 `SectionController` 可以进行复用，扩大复用粒度，同时 `SectionController` 的复用粒度也是比较合适的。因为我们可能需要对不同的 `UIViewController` 进行配置，但是有很大可能它们的 `Cell` 显示方式都是相同，只是其它一些逻辑或者 UI 不同。我们也可以经由 `SectionController` 进行组装，合成不同的界面。 
 
