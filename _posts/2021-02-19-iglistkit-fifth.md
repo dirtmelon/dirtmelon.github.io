@@ -138,7 +138,8 @@ Instagram 之前直接使用 `reloadData` ，大部分情况下表现都没问�
 Foundation 的 `hash` 有可能会产生冲突，比如 `NSString` ，只使用前缀/中间/后缀部分的 32 个字符来进行 `hash` 的计算：
 
 https://twitter.com/jaredsinclair/status/746013622095208450?lang=en
-[image:966EF3A7-E3B6-4D20-9F6A-F56BCA67EA80-71618-000231177D20BE80/Clpdq9rXEAY86_E.jpg]
+
+![Clpdq9rXEAY86_E](https://raw.githubusercontent.com/dirtmelon/blog-images/main/Clpdq9rXEAY86_E.jpg)
 
 [objective c - Hash value of NSDictionary - Stack Overflow](https://stackoverflow.com/questions/11984112/hash-value-of-nsdictionary/11984624#11984624)
 

@@ -40,7 +40,7 @@ func setRootViewController(_ newRootViewController: UIViewController,
 ## UIModalPresentationStyle
 在 iOS 13 上，使用 `presentViewController` 弹出 `ViewController` 时，默认样式如下：
 
-[image:4B6C58EE-281D-494E-B85C-23821CB4A5DD-36785-00009ADB4900A1D3/1*Dne8HWkv4CzYDcTN1d79gw.jpeg]
+<img src="https://raw.githubusercontent.com/dirtmelon/blog-images/main/1*Dne8HWkv4CzYDcTN1d79gw.jpeg" alt="1*Dne8HWkv4CzYDcTN1d79gw" style="zoom:50%;" />
 
 大部分情况下我们需要的还是原来的样式，需要将 `viewController` 的 `modalPresentationStyle` 改为 `overFullScreen` ，但是一个个手动去改，工作量也比较大，此时就需要用到 `method swizzle` 了，[Referencing the Objective-C selector of property getters and setters](https://github.com/apple/swift-evolution/blob/7fcba970b88a5de3d302d291dc7bc9dfba0f9399/proposals/0064-property-selectors.md) 这份提案有说到 `Swift` 是支持获取 `getter` 和 `setter` 对应的 `selector` ，然后我们需要替换 `modalPresentationStyle` 的默认值，改为 `overFullScreen` ，这样可以在需要的时候设置为 `autoMatic` 。首先，需要在 `UIViewController` 的 `extension` 中新增 `swizzledModalPresentationStyle` 属性，默认值为 `.overFullScreen` ：
 
