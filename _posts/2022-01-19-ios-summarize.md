@@ -19,13 +19,13 @@ iOS 的包管理工具主要是 CocoaPods ， Swift Package Manager (aka SPM) �
 
 为了解决这个问题， WordPress 家出了一个插件：[cocoapods-repo-update](https://github.com/wordpress-mobile/cocoapods-repo-update) 。通过 cocoapods-repo-update 插件，可以在执行 `pod install` 时动态判断是否需要添加 `--repo-update` 参数。其原理比较简单，就是通过 CocoaPods 的插件机制，对 `pre_install` 进行监听，在里面直接执行 CocoaPods 的依赖分析，如果没报错就不调用 `update_repositories` 方法。相关实现：[cocoapods-repo-update/hooks.rb](https://github.com/wordpress-mobile/cocoapods-repo-update/blob/trunk/lib/cocoapods_repo_update/hooks.rb) 。
 
-插件目前有个 bug ，没有处理对新增库这种情况进行处理，导致其直接报错，而不是执行 `update_repositories` ，提了个 PR 修复：https://github.com/wordpress-mobile/cocoapods-repo-update/pull/1 ，目前还没有合并。
+插件目前有个 bug ，没有处理对新增库这种情况进行处理，导致其直接报错，而不是执行 `update_repositories` ，提了个 PR 修复：[cocoapods-repo-update/pull/1](https://github.com/wordpress-mobile/cocoapods-repo-update/pull/1) ，目前还没有合并。
 
 当然了， CocoaPods 的依赖分析也是需要时间的，在我们公司的主工程上，每次依赖分析的耗时大概是 16s ，但是更新 Spec 源耗时是按分钟计的，网络不好时耗时更久。所以这个交易是比较划算的。
 
 更多优化可以看这个：[抖音研发效能建设 - CocoaPods 优化实践](https://mp.weixin.qq.com/s/Pt6pcxKCHhdnnWPYrToNvA)
 
-如果没有专门的团队来做这个事情，实施起来会比较困难，可以看下有没有类似的开源方案，或者挑一些成本比较低的优化点来做。比如说将 GitHub/GitLab 的地址转为 HTTP 地址来进行下载，加快下载速度，有类似的开源方案：[cocoapods-git-tarball](https://github.com/igor-makarov/cocoapods-git-tarball) 。如果要开启 `generate_multiple_pod_projects` 或者 Clang Module ，需要对 `import` 进行调整，可以使用 https://github.com/SketchK/ImportSanitizer 这个工具来进行批量修改。
+如果没有专门的团队来做这个事情，实施起来会比较困难，可以看下有没有类似的开源方案，或者挑一些成本比较低的优化点来做。比如说将 GitHub/GitLab 的地址转为 HTTP 地址来进行下载，加快下载速度，有类似的开源方案：[cocoapods-git-tarball](https://github.com/igor-makarov/cocoapods-git-tarball) 。如果要开启 `generate_multiple_pod_projects` 或者 Clang Module ，需要对 `import` 进行调整，可以使用 [ImportSanitizer](https://github.com/SketchK/ImportSanitizer) 这个工具来进行批量修改。
 
 ## 生成二进制产物
 
@@ -37,9 +37,9 @@ App 业务和体积大到一定程度之后，都会通过组件化来分隔业�
 
 开源方案：
 
-https://github.com/tripleCC/cocoapods-bin
+[cocoapods-bin](https://github.com/tripleCC/cocoapods-bin)
 
-https://github.com/MeetYouDevs/cocoapods-imy-bin
+[cocoapods-imy-bin](https://github.com/MeetYouDevs/cocoapods-imy-bin)
 
 对应文章：
 
@@ -63,7 +63,7 @@ https://github.com/MeetYouDevs/cocoapods-imy-bin
 
 开源方案：
 
-https://github.com/WeijunDeng/Zabel
+[Zabel](https://github.com/WeijunDeng/Zabel)
 
 对应的文章：
 
@@ -156,7 +156,7 @@ Objective-C 作为一门基于 C 的语言，采取了“信任程序员”的�
 
 这是团队其他同学写的如何通过 git hooks 来进行工程规范管理的文章：
 
-[手Y开发规范化建设二：手Y业务工程规范建设 - 掘金](https://juejin.cn/post/7041152462115307534/)
+[手Y开发规范化建设二：手Y业务工程规范建设](https://juejin.cn/post/7041152462115307534/)
 
 通过 git hooks 我们可以添加一些自定义的规则：
 
@@ -195,7 +195,7 @@ config.build_settings['WARNING_CFLAGS'] = ['-Werror=protocol', '-Werror=arc-unsa
 
 基于 URL 的好处是其本身是一种跨段的协议， iOS ，Android 和 Web 可以统一使用，但是无法直接传输原生数据，需要进行一定的改造。且需要进行硬编码，增加维护成本。
 
-基于 Target-Action 的方案比较出名的就是：https://github.com/casatwy/CTMediator
+基于 Target-Action 的方案比较出名的就是：[CTMediator](https://github.com/casatwy/CTMediator)
 
 相关文章：[iOS应用架构谈 组件化方案](https://casatwy.com/iOS-Modulization.html)
 
@@ -216,13 +216,13 @@ Target-Action 方案的缺点就是需要编写大量的胶水代码，而且还
 
 上面提到组件目前是通过单独编译来生成二进制产物，那么就需要单独管理组件的 Xcode 工程。这样带来的一个问题就是新增/删除/迁移文件时，操作都比较繁琐，需要在组件的 Xcode 工程中同步进行操作。所以我们采取动态生成 Xcode 工程的方式。比较流行的开源方案有以下几种：
 
-https://github.com/yonaskolb/XcodeGen
+[XcodeGen](https://github.com/yonaskolb/XcodeGen)
 
-https://github.com/tuist/tuist
+[tuist](https://github.com/tuist/tuist)
 
-https://github.com/igor-makarov/xcake
+[xcake](https://github.com/igor-makarov/xcake)
 
-https://github.com/lyptt/struct
+[struct](https://github.com/lyptt/struct)
 
 可以根据自己的实际需求来选择对应的方案，采取动态生成 Xcode 工程的好处如下：
 
@@ -281,7 +281,7 @@ https://github.com/lyptt/struct
 2. 与 `UIApplicationDelegate` 的方法类似，方便处理传递过来的参数，比如说 `(UIApplication *)application` 和 `(NSDictionary *)launchOptions` ；
 3. 某个组件内生命周期的方法可以集中到一个 `Class` 内，方便管理和统计。
 
-对应的实现在这里：https://github.com/dirtmelon/DTComponentLifeCycle
+对应的实现在这里：[DTComponentLifeCycle](https://github.com/dirtmelon/DTComponentLifeCycle)
 
 1. 生命周期相关方法在 `IDTComponentLifeCycle.h` ，用法可以看下里面的说明和 Demo ；
 2. `IDTComponentLifeMetric` 用于统计各个组件的调用情况，调用 `registerMetricObservers` 进行注册；
