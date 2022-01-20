@@ -2,6 +2,7 @@
 layout: post
 title: Promises 的 Swift 实现
 date: 2021-12-13 10:22 +0800
+tags: [源码解析]
 ---
 
 Promises 的 Swift 层是基于 Objective-C 层实现的，借由 Swift 的特性，提供了更加安全和便捷的接口。
