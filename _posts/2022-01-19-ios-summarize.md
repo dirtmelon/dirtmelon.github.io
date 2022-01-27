@@ -9,7 +9,8 @@ tags: [iOS]
 
 ## 从 pod install 开始
 
-iOS 的包管理工具主要是 CocoaPods ， Swift Package Manager (aka SPM) 和 Carthage 。其中 CocoaPods 是历史最悠久的，第一次提交可以追溯到十年前 ：https://twitter.com/orta/status/1426093325011013632 。虽然说其对工程的入侵一直被人诟病，但是毫无疑问， CocoaPods 依旧是 iOS 上最受欢迎的包管理工具，根据 JetBrains 2021 的调查报告 ：[Swift 和 Objective-C - 2021 开发人员生态系统信息图](https://www.jetbrains.com/zh-cn/lp/devecosystem-2021/swift-objc/) 。大概有 70% 的开发者在使用 CocoaPods ：
+iOS 的包管理工具主要是 CocoaPods ， Swift Package Manager (aka SPM) 和 Carthage 。其中 CocoaPods 是历史最悠久的，第一次提交可以追溯到十年前 ：[Ten years ago today 
+@alloy started writing @CocoaPods](https://twitter.com/orta/status/1426093325011013632) 。虽然说其对工程的入侵一直被人诟病，但是毫无疑问， CocoaPods 依旧是 iOS 上最受欢迎的包管理工具，根据 JetBrains 2021 的调查报告 ：[Swift 和 Objective-C - 2021 开发人员生态系统信息图](https://www.jetbrains.com/zh-cn/lp/devecosystem-2021/swift-objc/) 。大概有 70% 的开发者在使用 CocoaPods ：
 
 ![image-20220119224442115](https://raw.githubusercontent.com/dirtmelon/blog-images/main/image-20220119224442115.png)
 
@@ -193,7 +194,7 @@ config.build_settings['WARNING_CFLAGS'] = ['-Werror=protocol', '-Werror=arc-unsa
 - 基于 Target-Action ；
 - 基于 Protocol-Class 。
 
-基于 URL 的好处是其本身是一种跨段的协议， iOS ，Android 和 Web 可以统一使用，但是无法直接传输原生数据，需要进行一定的改造。且需要进行硬编码，增加维护成本。
+基于 URL 的好处是其本身是一种跨端的协议， iOS ，Android 和 Web 可以统一使用，但是无法直接传输原生数据，需要进行一定的改造。且需要进行硬编码，增加维护成本。
 
 基于 Target-Action 的方案比较出名的就是：[CTMediator](https://github.com/casatwy/CTMediator)
 
